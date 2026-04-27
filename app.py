@@ -38,6 +38,11 @@ def hello_world():
 def get_time():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+@app.route('/hellotime')
+def get_hellotime():
+    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return f"Hello, the time is {time}!"
+
 
 @app.route('/measurements', methods=['POST'])
 def create_measurement():
